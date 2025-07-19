@@ -1,0 +1,1 @@
+sudo certbot certonly --standalone -d api.example.com -d dev.example.com

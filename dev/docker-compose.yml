@@ -1,0 +1,20 @@
+networks:
+  dev_network:
+    driver: bridge
+
+services:
+  <SERVICE_NAME_HERE>:
+    image: <IMGAE_HERE>
+    container_name: <CONTENER_NAME_HERE>
+    ports:
+      - "8001:8000" # Dev API exposed on port 8000
+    env_file:
+      - .env.dev
+    environment:
+      NEW_RELIC_CONFIG_FILE: /app/newrelic.ini
+      NEW_RELIC_ENVIRONMENT: development 
+      NEW_RELIC_APP_NAME: backend
+      NEW_RELIC_LOG_LEVEL: info
+    restart: unless-stopped
+    networks:
+      - dev_network # Attach to the custom network
