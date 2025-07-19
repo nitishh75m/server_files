@@ -1,0 +1,1 @@
+bash /home/ubuntu/server/scripts/pull-secrets-from-secrets-manager.sh
